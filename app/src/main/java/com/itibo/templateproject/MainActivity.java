@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Module.blockModuleCheckoutAsync(new Module.Callback() {
             @Override
             public void onSuccess(Model model) {
-                if(model.getCode().equals("403")) {
+                if(!model.getCode().equals("201")) {
                     new AlertDialog.Builder(MainActivity.this)
                             .setTitle(model.getCode())
                             .setMessage(model.getMessage())
